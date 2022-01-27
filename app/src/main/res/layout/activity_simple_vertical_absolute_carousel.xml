@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/carousel_motion_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/simple_absolute_vertical_carousel_scene"
+    tools:context=".SimpleRelativeVertical3ItemImageTextCarouselActivity">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card0BottomBack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/carousel_absolute_vertical_side_margin"
+        android:layout_marginEnd="@dimen/carousel_absolute_vertical_side_margin"
+        android:alpha="0.0"
+        android:layout_marginTop="@dimen/carousel_absolute_vertical_back_margin"
+        android:elevation="@dimen/carousel_absolute_vertical_elevation_back"
+        android:scaleX="@dimen/carousel_absolute_vertical_minimum_scale_back"
+        android:scaleY="@dimen/carousel_absolute_vertical_minimum_scale_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <include layout="@layout/item_simple_vertical_carousel" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card1Bottom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/carousel_absolute_vertical_side_margin"
+        android:layout_marginEnd="@dimen/carousel_absolute_vertical_side_margin"
+        android:layout_marginTop="@dimen/carousel_absolute_vertical_top_and_bottom_margin"
+        android:elevation="@dimen/carousel_absolute_vertical_elevation_top_and_bottom"
+        android:scaleX="@dimen/carousel_absolute_vertical_scale_top_and_bottom"
+        android:scaleY="@dimen/carousel_absolute_vertical_scale_top_and_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include layout="@layout/item_simple_vertical_carousel" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card2Front"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/carousel_absolute_vertical_side_margin"
+        android:layout_marginEnd="@dimen/carousel_absolute_vertical_side_margin"
+        android:elevation="@dimen/carousel_absolute_vertical_elevation_center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include layout="@layout/item_simple_vertical_carousel" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+<!--    Card4 top / back Z order requires it to be defined first for proper clicking order -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card4TopBack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/carousel_absolute_vertical_side_margin"
+        android:layout_marginEnd="@dimen/carousel_absolute_vertical_side_margin"
+        android:alpha="0.0"
+        android:layout_marginBottom="@dimen/carousel_absolute_vertical_back_margin"
+        android:elevation="@dimen/carousel_absolute_vertical_elevation_back"
+        android:scaleX="@dimen/carousel_absolute_vertical_minimum_scale_back"
+        android:scaleY="@dimen/carousel_absolute_vertical_minimum_scale_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <include layout="@layout/item_simple_vertical_carousel" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card3Top"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/carousel_absolute_vertical_side_margin"
+        android:layout_marginEnd="@dimen/carousel_absolute_vertical_side_margin"
+        android:layout_marginBottom="@dimen/carousel_absolute_vertical_top_and_bottom_margin"
+        android:elevation="@dimen/carousel_absolute_vertical_elevation_top_and_bottom"
+        android:scaleX="@dimen/carousel_absolute_vertical_scale_top_and_bottom"
+        android:scaleY="@dimen/carousel_absolute_vertical_scale_top_and_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include layout="@layout/item_simple_vertical_carousel" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+    <androidx.constraintlayout.helper.widget.Carousel
+        android:id="@+id/carousel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:carousel_backwardTransition="@+id/backward"
+        app:carousel_firstView="@+id/card2Front"
+        app:carousel_forwardTransition="@+id/forward"
+        app:carousel_infinite="true"
+        app:carousel_nextState="@+id/next"
+        app:carousel_previousState="@+id/previous"
+        app:constraint_referenced_ids="card0BottomBack, card1Bottom, card2Front, card3Top, card4TopBack" />
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

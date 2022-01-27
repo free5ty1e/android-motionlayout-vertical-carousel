@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto"
+    motion:defaultDuration="250"
+    >
+
+<!--    Abstract / template for all transitions below - cubic(0,1,0.5,1) is a nice simple curve -->
+<!--    <Transition
+        motion:motionInterpolator="cubic(0,1,0.5,1)"
+        motion:duration="250" />-->
+
+    <Transition
+        android:id="@+id/forward"
+        motion:motionInterpolator="cubic(0,1,0.5,1)"
+        motion:duration="250"
+        motion:constraintSetEnd="@id/next"
+        motion:constraintSetStart="@id/start">
+
+        <OnSwipe
+            motion:maxAcceleration="1000.0"
+            motion:maxVelocity="5000.0"
+            motion:autoCompleteMode="continuousVelocity"
+            motion:dragScale="200.0"
+            motion:dragDirection="dragDown"
+             />
+
+
+    </Transition>
+
+    <Transition
+        android:id="@+id/backward"
+        motion:motionInterpolator="cubic(0,1,0.5,1)"
+        motion:duration="250"
+        motion:constraintSetEnd="@id/previous"
+        motion:constraintSetStart="@id/start">
+
+        <OnSwipe
+            motion:maxAcceleration="1000.0"
+            motion:maxVelocity="5000.0"
+            motion:autoCompleteMode="continuousVelocity"
+            motion:dragScale="200.0"
+            motion:dragDirection="dragUp"
+            />
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+
+        <Constraint
+            android:id="@+id/card0BottomBack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/carousel_absolute_vertical_side_margin"
+            android:layout_marginEnd="@dimen/carousel_absolute_vertical_side_margin"
+            android:alpha="0.0"
+            android:layout_marginTop="@dimen/carousel_absolute_vertical_back_margin"
+            android:elevation="@dimen/carousel_absolute_vertical_elevation_back"
+            android:scaleX="@dimen/carousel_absolute_vertical_minimum_scale_back"
+            android:scaleY="@dimen/carousel_absolute_vertical_minimum_scale_back"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/card1Bottom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/carousel_absolute_vertical_side_margin"
+            android:layout_marginEnd="@dimen/carousel_absolute_vertical_side_margin"
+            android:layout_marginTop="@dimen/carousel_absolute_vertical_top_and_bottom_margin"
+            android:elevation="@dimen/carousel_absolute_vertical_elevation_top_and_bottom"
+            android:scaleX="@dimen/carousel_absolute_vertical_scale_top_and_bottom"
+            android:scaleY="@dimen/carousel_absolute_vertical_scale_top_and_bottom"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/card2Front"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/carousel_absolute_vertical_side_margin"
+            android:layout_marginEnd="@dimen/carousel_absolute_vertical_side_margin"
+            android:elevation="@dimen/carousel_absolute_vertical_elevation_center"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/card3Top"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/carousel_absolute_vertical_side_margin"
+            android:layout_marginEnd="@dimen/carousel_absolute_vertical_side_margin"
+            android:layout_marginBottom="@dimen/carousel_absolute_vertical_top_and_bottom_margin"
+            android:elevation="@dimen/carousel_absolute_vertical_elevation_top_and_bottom"
+            android:scaleX="@dimen/carousel_absolute_vertical_scale_top_and_bottom"
+            android:scaleY="@dimen/carousel_absolute_vertical_scale_top_and_bottom"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/card4TopBack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/carousel_absolute_vertical_side_margin"
+            android:layout_marginEnd="@dimen/carousel_absolute_vertical_side_margin"
+            android:alpha="0.0"
+            android:layout_marginBottom="@dimen/carousel_absolute_vertical_back_margin"
+            android:elevation="@dimen/carousel_absolute_vertical_elevation_back"
+            android:scaleX="@dimen/carousel_absolute_vertical_minimum_scale_back"
+            android:scaleY="@dimen/carousel_absolute_vertical_minimum_scale_back"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+        </Constraint>
+
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/next">
+
+        <Constraint
+            android:id="@+id/card0BottomBack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/carousel_absolute_vertical_side_margin"
+            android:layout_marginEnd="@dimen/carousel_absolute_vertical_side_margin"
+            android:alpha="0.0"
+            android:layout_marginTop="@dimen/carousel_absolute_vertical_back_margin"
+            android:elevation="@dimen/carousel_absolute_vertical_elevation_back"
+            android:scaleX="@dimen/carousel_absolute_vertical_minimum_scale_back"
+            android:scaleY="@dimen/carousel_absolute_vertical_minimum_scale_back"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/card1Bottom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/carousel_absolute_vertical_side_margin"
+            android:layout_marginEnd="@dimen/carousel_absolute_vertical_side_margin"
+            android:alpha="0.0"
+            android:layout_marginTop="@dimen/carousel_absolute_vertical_back_margin"
+            android:elevation="@dimen/carousel_absolute_vertical_elevation_back"
+            android:scaleX="@dimen/carousel_absolute_vertical_minimum_scale_back"
+            android:scaleY="@dimen/carousel_absolute_vertical_minimum_scale_back"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/card2Front"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/carousel_absolute_vertical_side_margin"
+            android:layout_marginEnd="@dimen/carousel_absolute_vertical_side_margin"
+            android:layout_marginTop="@dimen/carousel_absolute_vertical_top_and_bottom_margin"
+            android:elevation="@dimen/carousel_absolute_vertical_elevation_top_and_bottom"
+            android:scaleX="@dimen/carousel_absolute_vertical_scale_top_and_bottom"
+            android:scaleY="@dimen/carousel_absolute_vertical_scale_top_and_bottom"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/card3Top"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/carousel_absolute_vertical_side_margin"
+            android:layout_marginEnd="@dimen/carousel_absolute_vertical_side_margin"
+            android:elevation="@dimen/carousel_absolute_vertical_elevation_center"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/card4TopBack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/carousel_absolute_vertical_side_margin"
+            android:layout_marginEnd="@dimen/carousel_absolute_vertical_side_margin"
+            android:layout_marginBottom="@dimen/carousel_absolute_vertical_top_and_bottom_margin"
+            android:elevation="@dimen/carousel_absolute_vertical_elevation_top_and_bottom"
+            android:scaleX="@dimen/carousel_absolute_vertical_scale_top_and_bottom"
+            android:scaleY="@dimen/carousel_absolute_vertical_scale_top_and_bottom"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+        </Constraint>
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/previous">
+
+        <Constraint
+            android:id="@+id/card0BottomBack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/carousel_absolute_vertical_side_margin"
+            android:layout_marginEnd="@dimen/carousel_absolute_vertical_side_margin"
+            android:layout_marginTop="@dimen/carousel_absolute_vertical_top_and_bottom_margin"
+            android:elevation="@dimen/carousel_absolute_vertical_elevation_top_and_bottom"
+            android:scaleX="@dimen/carousel_absolute_vertical_scale_top_and_bottom"
+            android:scaleY="@dimen/carousel_absolute_vertical_scale_top_and_bottom"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/card1Bottom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/carousel_absolute_vertical_side_margin"
+            android:layout_marginEnd="@dimen/carousel_absolute_vertical_side_margin"
+            android:elevation="@dimen/carousel_absolute_vertical_elevation_center"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/card2Front"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/carousel_absolute_vertical_side_margin"
+            android:layout_marginEnd="@dimen/carousel_absolute_vertical_side_margin"
+            android:layout_marginBottom="@dimen/carousel_absolute_vertical_top_and_bottom_margin"
+            android:elevation="@dimen/carousel_absolute_vertical_elevation_top_and_bottom"
+            android:scaleX="@dimen/carousel_absolute_vertical_scale_top_and_bottom"
+            android:scaleY="@dimen/carousel_absolute_vertical_scale_top_and_bottom"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/card3Top"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/carousel_absolute_vertical_side_margin"
+            android:layout_marginEnd="@dimen/carousel_absolute_vertical_side_margin"
+            android:alpha="0.0"
+            android:layout_marginBottom="@dimen/carousel_absolute_vertical_back_margin"
+            android:elevation="@dimen/carousel_absolute_vertical_elevation_back"
+            android:scaleX="@dimen/carousel_absolute_vertical_minimum_scale_back"
+            android:scaleY="@dimen/carousel_absolute_vertical_minimum_scale_back"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/card4TopBack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/carousel_absolute_vertical_side_margin"
+            android:layout_marginEnd="@dimen/carousel_absolute_vertical_side_margin"
+            android:alpha="0.0"
+            android:layout_marginBottom="@dimen/carousel_absolute_vertical_back_margin"
+            android:elevation="@dimen/carousel_absolute_vertical_elevation_back"
+            android:scaleX="@dimen/carousel_absolute_vertical_minimum_scale_back"
+            android:scaleY="@dimen/carousel_absolute_vertical_minimum_scale_back"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+        </Constraint>
+    </ConstraintSet>
+</MotionScene>

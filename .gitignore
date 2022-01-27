@@ -1,0 +1,47 @@
+bin/
+gen/
+*/build
+local.properties
+coverage/
+.settings/
+
+## OSX ignores
+.DS_Store
+
+## Android ignores
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+out/
+
+local-libs/
+
+## Eclipse ignores
+.project
+.classpath
+.settings
+
+## IntelliJ ignores
+*.iml
+.idea/*
+
+*.swp
+
+.apt_generated/
+.factorypath
+.gradle/
+/captures/
+
+/build
+/captures
+.externalNativeBuild
+/bitrise.yml
+/gradle.deps
