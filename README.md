@@ -2,4 +2,5 @@
 Android Vertical 3 Visible Item Carousel using MotionLayout and Adapter
 
 #### Simple Vertical 3 Visible Item Circular Carousel
-![vertical_carousel.mp4](video/vertical_carousel_cropped.mp4)
+![Demo Video](https://drive.google.com/file/d/1WwIw1tVe8ACzXs93JnqBoM95hbD4Wo3F/view?usp=sharing)
+As a learning exercise, I created this project to teach myself how to create a complex custom control utilizing the latest MotionLayout library from Android because I wanted to experiment with it as a potential solution for a particular UI design suggestion) [Jan 2022]
